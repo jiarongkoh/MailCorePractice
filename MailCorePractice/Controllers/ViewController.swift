@@ -30,16 +30,19 @@ class ViewController: UITableViewController {
 
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sent", style: .plain, target: self, action: #selector(alertControllerForSendEmail))
-        
-         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Authenticate", style: .plain, target: self, action: #selector(handleLogin))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Authenticate", style: .plain, target: self, action: #selector(authenticateGmailIfNeeded))
         
         setupTableView()
 //        fetchEmailsFrom126()
 
-        handleLogin()
+//        authenticateGmailIfNeeded()
+
+
     }
+
+
     
-    @objc func handleLogin() {
+    @objc func authenticateGmailIfNeeded() {
         GmailHelper.shared.doEmailLoginIfRequired(viewController: self) {
             if
                 let authorization = GTMAppAuthFetcherAuthorization(fromKeychainForName: self.kExampleAuthorizerKey),
@@ -64,21 +67,21 @@ class ViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    var host = "210.12.48.100"
+    
     func fetchEmailsFromGmail(accessToken: String) {
         print("Fetching emails from Gmail...")
         let session = MCOIMAPSession()
         session.hostname = "imap.gmail.com"
         session.port = 993
         session.username = "jiarongtest@gmail.com"
-        session.password = "S9048009Z"
+//        session.password = "S9048009Z"
         session.authType = .xoAuth2
         session.connectionType = .TLS
         session.oAuth2Token = accessToken
         session.dispatchQueue = DispatchQueue.global()
 
-        var requestKind = MCOIMAPMessagesRequestKind()
-        requestKind = requestKind.union(.headers)
-        requestKind = requestKind.union(.flags)
+        let requestKind: MCOIMAPMessagesRequestKind = [.headers, .flags]
         let folder = "INBOX"
         let uids = MCOIndexSet(range: MCORangeMake(1, UINT64_MAX))
         
@@ -104,9 +107,7 @@ class ViewController: UITableViewController {
         session.connectionType = .TLS
         session.dispatchQueue = DispatchQueue.global()
         
-        var requestKind = MCOIMAPMessagesRequestKind()
-        requestKind = requestKind.union(.headers)
-        requestKind = requestKind.union(.flags)
+        let requestKind: MCOIMAPMessagesRequestKind = [.headers, .flags]
         let folder = "INBOX"
         let uids = MCOIndexSet(range: MCORangeMake(1, UINT64_MAX))
         
@@ -187,8 +188,12 @@ class ViewController: UITableViewController {
         
         let fetchOperation = session.fetchMessagesOperation(withFolder: folder, requestKind: requestKind, uids: uids)
         
-        fetchOperation?.start({ (error, messages, index) in
+        fetchOperation?.start({ (error, messages, vanishedMessages) in
             completion(nil, error)
+            
+            if let vanishedMessages = vanishedMessages {
+                print(vanishedMessages)
+            }
             
             if let messages = messages, !messages.isEmpty {
                 var messsageArray = [Message]()
@@ -198,7 +203,9 @@ class ViewController: UITableViewController {
                     downloadGroup.enter()
                     let op = session.fetchMessageOperation(withFolder: folder, uid: message.uid)
                     op?.start({ (error, data) in
-                        completion(nil, error)
+                        if let _ = error {
+                            downloadGroup.leave()
+                        }
                         
                         if let data = data {
                             let messageParser = MCOMessageParser(data: data)
@@ -217,6 +224,4 @@ class ViewController: UITableViewController {
             }
         })
     }
-    
-   
 }
