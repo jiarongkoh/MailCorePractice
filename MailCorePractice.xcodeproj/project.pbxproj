@@ -16,11 +16,13 @@
 		2A59458B2203DC4C003150E5 /* MailCorePracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A59458A2203DC4C003150E5 /* MailCorePracticeUITests.swift */; };
 		2A5945B72203DDE7003150E5 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5945A72203DDAE003150E5 /* libMailCore-ios.a */; };
 		2A5945B92203DDF2003150E5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5945B82203DDF2003150E5 /* CFNetwork.framework */; };
+		2A949E0F221FFF4800183603 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A949E0E221FFF4800183603 /* Utilities.swift */; };
 		2A95B98722053C930027F3F7 /* ViewController + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95B98622053C930027F3F7 /* ViewController + TableView.swift */; };
 		2A95B9902205852D0027F3F7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95B98F2205852D0027F3F7 /* Message.swift */; };
 		2A95B992220585460027F3F7 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95B991220585460027F3F7 /* Account.swift */; };
 		2A95B99622058A580027F3F7 /* GmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95B99522058A580027F3F7 /* GmailHelper.swift */; };
 		2A95B9982205980C0027F3F7 /* client_382696408917-r139aava2dj6jlgluatmoqnc019vplo8.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A95B9972205980C0027F3F7 /* client_382696408917-r139aava2dj6jlgluatmoqnc019vplo8.apps.googleusercontent.com.plist */; };
+		2AE8CC772243445F0023049B /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE8CC762243445F0023049B /* CollectionController.swift */; };
 		C27A92FB5AAE0DF47EE374E3 /* Pods_MailCorePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601F12E304B3E7A710D31700 /* Pods_MailCorePractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,11 +123,13 @@
 		2A5945992203DDAE003150E5 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		2A5945B82203DDF2003150E5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2A5945BA2203E012003150E5 /* MailCorePractice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MailCorePractice-Bridging-Header.h"; sourceTree = "<group>"; };
+		2A949E0E221FFF4800183603 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2A95B98622053C930027F3F7 /* ViewController + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + TableView.swift"; sourceTree = "<group>"; };
 		2A95B98F2205852D0027F3F7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2A95B991220585460027F3F7 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		2A95B99522058A580027F3F7 /* GmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailHelper.swift; sourceTree = "<group>"; };
 		2A95B9972205980C0027F3F7 /* client_382696408917-r139aava2dj6jlgluatmoqnc019vplo8.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_382696408917-r139aava2dj6jlgluatmoqnc019vplo8.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
+		2AE8CC762243445F0023049B /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
 		601F12E304B3E7A710D31700 /* Pods_MailCorePractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MailCorePractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9AB46EEBB562556C583696 /* Pods-MailCorePractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MailCorePractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-MailCorePractice/Pods-MailCorePractice.release.xcconfig"; sourceTree = "<group>"; };
 		9BA112293F79001E5B5608F6 /* Pods-MailCorePractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MailCorePractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MailCorePractice/Pods-MailCorePractice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 				2A95B98F2205852D0027F3F7 /* Message.swift */,
 				2A95B991220585460027F3F7 /* Account.swift */,
 				2A95B99522058A580027F3F7 /* GmailHelper.swift */,
+				2A949E0E221FFF4800183603 /* Utilities.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			children = (
 				2A59456C2203DC4B003150E5 /* ViewController.swift */,
 				2A95B98622053C930027F3F7 /* ViewController + TableView.swift */,
+				2AE8CC762243445F0023049B /* CollectionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -484,6 +490,8 @@
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/SigmaSwiftStatistics/SigmaSwiftStatistics.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -492,6 +500,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SigmaSwiftStatistics.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -529,8 +539,10 @@
 			files = (
 				2A95B992220585460027F3F7 /* Account.swift in Sources */,
 				2A59456D2203DC4B003150E5 /* ViewController.swift in Sources */,
+				2A949E0F221FFF4800183603 /* Utilities.swift in Sources */,
 				2A95B9902205852D0027F3F7 /* Message.swift in Sources */,
 				2A95B98722053C930027F3F7 /* ViewController + TableView.swift in Sources */,
+				2AE8CC772243445F0023049B /* CollectionController.swift in Sources */,
 				2A95B99622058A580027F3F7 /* GmailHelper.swift in Sources */,
 				2A59456B2203DC4B003150E5 /* AppDelegate.swift in Sources */,
 			);

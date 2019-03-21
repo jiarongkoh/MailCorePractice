@@ -23,7 +23,7 @@ class GmailHelper: NSObject {
     override init() {
         super.init()
         
-        loadState()
+//        loadState()
     }
     
     func loadState() {

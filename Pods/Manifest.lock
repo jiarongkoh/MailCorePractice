@@ -8,21 +8,29 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - GTMSessionFetcher/Full (1.2.1):
     - GTMSessionFetcher/Core (= 1.2.1)
+  - Kanna (4.0.2)
+  - SigmaSwiftStatistics (8.0.1)
 
 DEPENDENCIES:
   - GTMAppAuth
+  - Kanna (~> 4.0.0)
+  - SigmaSwiftStatistics (~> 8.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AppAuth
     - GTMAppAuth
     - GTMSessionFetcher
+    - Kanna
+    - SigmaSwiftStatistics
 
 SPEC CHECKSUMS:
   AppAuth: 137f6bb6fc9dfbaf2cf9f6fcff1d336ff0163bc6
   GTMAppAuth: c5e41aaf039ac1ccc41543e6ea2ef7abd255ad41
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
+  SigmaSwiftStatistics: 063591f136428920b3083e3d9c181c9c6b1a9dec
 
-PODFILE CHECKSUM: e8f83008d61ff048eace04b9313aebd1a5b2dc71
+PODFILE CHECKSUM: 8fc747a2335abe2b9c15490118f9018648c57a53
 
 COCOAPODS: 1.5.3

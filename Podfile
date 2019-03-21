@@ -8,4 +8,7 @@ target 'MailCorePractice' do
   # Pods for MailCorePractice
 
   pod 'GTMAppAuth'
+  pod 'Kanna', '~> 4.0.0'
+  pod 'SigmaSwiftStatistics', '~> 8.0'
+
 end

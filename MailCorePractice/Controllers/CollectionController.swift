@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import UIKit
+
+class CollectionController: UICollectionViewController {
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+}
